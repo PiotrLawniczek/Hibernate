@@ -67,7 +67,6 @@ public class DataLoader implements ApplicationRunner {
         user3.getUserRole().add(userRoleRepository.findByRole(userRole.getRole()));
         userRepository.save(user3);*/
 
-
         System.out.println("generate");
     }
 }

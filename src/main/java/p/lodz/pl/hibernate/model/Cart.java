@@ -1,10 +1,13 @@
 package p.lodz.pl.hibernate.model;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@Data
 public class Cart {
 
     @Id
@@ -17,34 +20,12 @@ public class Cart {
     @OneToMany(mappedBy = "cart")
     private Set<Product> products = new HashSet<>();
 
+    public Cart() {
+    }
     public Cart(User user) {
         this.user = user;
     }
 
-    public Cart() {
-    }
 
-    public long getId() {
-        return id;
-    }
 
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
-    }
-
-    public Set<Product> getProducts() {
-        return products;
-    }
-
-    public void setProducts(Set<Product> products) {
-        this.products = products;
-    }
 }
